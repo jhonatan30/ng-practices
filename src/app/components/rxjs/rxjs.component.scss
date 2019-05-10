@@ -1,0 +1,48 @@
+.rxjs-component-container {
+    padding-top: 50px;
+
+    .subject-container {
+        border-radius: 0px 0px 5px 5px;
+        box-shadow: 2px 3px 10px 1px #dadada;
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+        padding: 50px 0 0 0x;
+
+        .card-header {
+            border: none;
+            background: #206098;
+
+            h1 {
+                color: white;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .subject-description {
+                align-items: center;
+                display: flex;
+                background-color: white;
+                justify-content: space-evenly;
+                border-radius: 2px;
+
+                i {
+                    font-size: 50px;
+                    color: #206098;
+                }
+
+                p {
+                    text-align: justify;
+                    width: 85%;
+                }
+            }
+        }
+
+        .card-body {
+            h1 {
+                color: #206098;
+            }
+        }
+    }
+
+}
