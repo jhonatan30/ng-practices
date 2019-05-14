@@ -4,17 +4,6 @@
     <!-- CARD HEADER -->
     <div class="card-header">
       <h1> These ARE the Angular tips you are looking for John Papa </h1>
-      <div class="subject-description">
-        <p>
-          " You’ll see how to guard your components and routes from Stormtrooper forces. Identify and defeat bugs
-          through
-          debugging your app using the Jedi force (and VS Code). You’ll learn how to host your app in the Cloud City
-          of
-          Bespin (cloud storage), rebel against servers and shift your APIs to serverless, and help R2D2 monitor your
-          app’s activity. You’ll discover the power of Angular APIs, tooling, and the cloud ARE the tips you have been
-          looking for. "
-        </p>
-      </div>
     </div>
 
     <!-- CARD BODY -->
@@ -26,13 +15,17 @@
       </div>
 
       <div class="subject-dev">
-        <h1> Development </h1>
 
         <h2> How do manage multiple Observables subscriptions? </h2>
 
         <div>
-          <button type="button" class="btn btn-info" (click)="onGetValues()"> Get values </button>
-          <p> {{ repsonse }}</p>
+          <button type="button" class="btn btn-info" (click)="onGetUsersByPage()"> Get users by page </button>
+          <p> {{ users }}</p>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-info" (click)="onGetUserById()"> Get user by Id </button>
+          <p> {{ user }}</p>
         </div>
 
       </div>

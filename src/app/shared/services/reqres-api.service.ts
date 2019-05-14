@@ -13,7 +13,8 @@ interface Endpoint {
 export class ReqresApiService {
 
   private _endpoints: Endpoint = {
-    getUsersPerPage: 'https://reqres.in/api/users?page={pageNumber}'
+    getUsersPerPage: 'https://reqres.in/api/users?page={pageNumber}',
+    getUsersById: 'https://reqres.in/api/users/{userId}'
   };
 
   constructor(private _request: RequestService) { }
@@ -21,5 +22,10 @@ export class ReqresApiService {
   public getUsers(pageNumber: number): Observable<ReqResUsers> {
     const urlWithPage: string = this._endpoints.getUsersPerPage.replace('{pageNumber}', pageNumber.toString());
     return this._request.get(urlWithPage);
+  }
+
+  public getUserById(userId: number): Observable<ReqResUsers> {
+    const urlWithUserId: string = this._endpoints.getUsersById.replace('{userId}', userId.toString());
+    return this._request.get(urlWithUserId);
   }
 }

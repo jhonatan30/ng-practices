@@ -1,25 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ReqresApiService } from 'src/app/shared/services/reqres-api.service';
-import { ReqResUsers } from 'src/app/shared/models/reqres-api.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.scss']
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit, OnDestroy {
 
-  public repsonse: string;
+  public users: string;
+  public user: string;
+
+  private _subs: Subscription[] = [];
 
   constructor(private _reqresApiService: ReqresApiService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ngOnDestroy(): void {
+    this._subs.forEach(s => s.unsubscribe());
   }
 
-  public onGetValues(): void {
-    this._reqresApiService
-      .getUsers(1)
-      .subscribe(resp => this.repsonse = JSON.stringify(resp));
+  public onGetUsersByPage(): void {
+    this._subs.push(
+      this._reqresApiService
+        .getUsers(1)
+        .subscribe(resp => this.users = JSON.stringify(resp))
+    );
+  }
+
+  public onGetUserById() {
+    this._subs.push(
+      this._reqresApiService
+        .getUserById(1)
+        .subscribe(resp => this.user = JSON.stringify(resp))
+    );
   }
 
 }
