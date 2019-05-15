@@ -9,22 +9,29 @@
         background-color: $blue-main;
     }
 
-    .sidebar-body {
+    ul.sidebar-body {
         margin: 0;
         padding: 0;
+        list-style: none;
+
         .menu-item {
             align-items: center;
             background-color: $blue-main;
+            border-right: 3px solid transparent;
             color: white;
             cursor: pointer;
             display: flex;
             height: 50px;
-            justify-content: center;
+            justify-content: start;
+            padding-left: 20px;
             transition: 0.25s background-color, 0.25s color;
-            border-right: 3px solid transparent;
 
             i, li {
                 pointer-events: none;
+            }
+
+            i {
+                margin-right: 25px;
             }
 
             &:hover {
