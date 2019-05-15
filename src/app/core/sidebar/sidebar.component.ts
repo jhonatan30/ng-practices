@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SidebarItem } from '../shared/models/sidebar-menu.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-  public menuItems = [
+  public menuItems: SidebarItem[] = [
     {
       url: 'rxjs',
       label: 'RxJs',
@@ -18,6 +19,11 @@ export class SidebarComponent implements OnInit {
       url: 'promises',
       label: 'Promises',
       icon: 'fas fa-stream'
+    },
+    {
+      url: 'javascript',
+      label: 'Javascript',
+      icon: 'fab fa-js-square'
     },
   ];
 

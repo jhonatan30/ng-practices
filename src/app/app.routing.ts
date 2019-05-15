@@ -1,3 +1,4 @@
+import { JsComponent } from './components/js/js.component';
 import { NgModule } from '@angular/core';
 import { PromisesComponent } from './components/promises/promises.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'promises',
         component: PromisesComponent
+    },
+    {
+        path: 'javascript',
+        component: JsComponent
     }
 ];
 
