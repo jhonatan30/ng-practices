@@ -1,0 +1,12 @@
+.app-body {
+    display: flex;
+    height: 100%;
+
+    .sidebar-comp-container {
+        width: 200px;
+    }
+    
+    .router-outlet-container {
+        width: 100%;
+    }
+}

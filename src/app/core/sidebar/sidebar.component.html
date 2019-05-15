@@ -1,0 +1,11 @@
+<div class="sidebar-container">
+  <div class="sidebar-header">
+
+  </div>
+  <ul class="sidebar-body">
+    <div *ngFor="let item of menuItems" (click)="onSelectMenuItem(item.url)" class="menu-item" [class.active]="isItemActive(item.url)">
+      <i [ngClass]="item.icon"></i>
+      <li> {{ item.label }}</li>
+    </div>
+  </ul>
+</div>
