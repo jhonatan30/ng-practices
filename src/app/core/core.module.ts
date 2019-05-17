@@ -3,12 +3,8 @@ import { NgModule } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    SidebarComponent
-  ],
+  imports: [CommonModule],
+  exports: [SidebarComponent],
   declarations: [SidebarComponent]
 })
 export class CoreModule { }

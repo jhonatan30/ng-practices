@@ -1,15 +1,10 @@
+import { Endpoint } from '../models/endpoint.model';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReqResUsers } from '../models/reqres-api.model';
 import { RequestService } from './request.service';
 
-interface Endpoint {
-  [key: string]: string;
-}
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ReqresApiService {
 
   private _endpoints: Endpoint = {

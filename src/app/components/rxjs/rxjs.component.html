@@ -1,36 +1,8 @@
-<div class="rxjs-component-container">
+<div class="rxjs-menu-cotainer">
 
-  <div class="subject-container">
-    <!-- CARD HEADER -->
-    <div class="card-header">
-      <h1> These ARE the Angular tips you are looking for John Papa </h1>
-    </div>
-
-    <!-- CARD BODY -->
-    <div class="card-body">
-
-      <div class="subject-video">
-        <iframe width="95%" height="450" src="https://www.youtube.com/embed/2ZFgcTOcnUg" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <div class="subject-dev">
-
-        <h2> How do manage multiple Observables subscriptions? </h2>
-
-        <div>
-          <button type="button" class="btn btn-info" (click)="onGetUsersByPage()"> Get users by page </button>
-          <p> {{ users }}</p>
-        </div>
-
-        <div>
-          <button type="button" class="btn btn-info" (click)="onGetUserById()"> Get user by Id </button>
-          <p> {{ user }}</p>
-        </div>
-
-      </div>
-
-    </div>
+  <div class="rxjs-item" (click)="onNavigateTo('rxjs/subject')">
+    <span> SUBJECT </span>
   </div>
+  <span class="label-overlaped"> SUBJECT </span>
 
 </div>

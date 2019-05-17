@@ -1,9 +1,13 @@
+import { JsModule } from './js/js.module';
 import { NgModule } from '@angular/core';
-import { RxjsComponent } from './rxjs/rxjs.component';
-import { PromisesComponent } from './promises/promises.component';
-import { JsComponent } from './js/js.component';
+import { PromisesModule } from './promises/promises.module';
+import { RxjsModule } from './rxjs/rxjs.module';
 
 @NgModule({
-  declarations: [RxjsComponent, PromisesComponent, JsComponent]
+  imports: [
+    PromisesModule,
+    RxjsModule,
+    JsModule
+  ]
 })
 export class ComponentsModule { }

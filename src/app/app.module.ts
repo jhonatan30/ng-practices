@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ServicesModule } from './shared/services/services.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     CoreModule,
     HttpClientModule,
     NoopAnimationsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
