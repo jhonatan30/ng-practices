@@ -1,3 +1,4 @@
+import { ErrorHandlingComponent } from './error-handling/error-handling.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsComponent } from './rxjs.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
     {
         path: 'subject',
         component: SubjectComponent
+    },
+    {
+        path: 'error-handling',
+        component: ErrorHandlingComponent
     }
 ];
 

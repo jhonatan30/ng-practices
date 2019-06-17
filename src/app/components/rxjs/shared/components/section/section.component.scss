@@ -1,0 +1,35 @@
+@import "../../../../../../assets/styles/colors";
+
+:host {
+    margin-top: 5px;
+
+    .item {
+        
+        align-items: center;
+        background-color: rgba($blue-main, 0.75);
+        border: 5px solid transparent;
+        color: white;
+        cursor: pointer; 
+        display: flex;
+        font-size: 12px;
+        font-weight: 600;
+        height: 100px;
+        justify-content: center;
+        transition: all 0.35s;
+        width: 100px;
+
+        &.inactive {
+            background-color: $inactive-element;
+            cursor: default;
+            pointer-events: none;
+
+            &:hover {
+                border: 0 solid $pink-main;
+            }
+        }
+
+        &:hover {
+            border: 50px solid $pink-main;
+        }
+    }
+}

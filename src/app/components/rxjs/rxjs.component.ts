@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ITEM } from './shared/models/rxjs.model';
+import { RX_JS_MENU_ITEMS } from './shared/consts/rxjs.const';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rxjs',
@@ -9,18 +10,14 @@ import { Router } from '@angular/router';
 })
 export class RxjsComponent implements OnInit, OnDestroy {
 
+  public menuItems: ITEM[] = RX_JS_MENU_ITEMS;
+
   private _subs: Subscription[] = [];
 
-  constructor(private _router: Router) { }
+  constructor() { }
 
   ngOnInit() { }
 
-  ngOnDestroy(): void {
-    this._subs.forEach(s => s.unsubscribe());
-  }
-
-  public onNavigateTo(url: string) {
-    this._router.navigateByUrl(url);
-  }
+  ngOnDestroy(): void { this._subs.forEach(s => s.unsubscribe()); }
 
 }

@@ -5,8 +5,17 @@
     height: 100%;
 
     .sidebar-header {
-        height: 50px;
+        align-items: center;
         background-color: $blue-main;
+        display: flex;
+        height: 50px;
+        padding-left: 20px;
+        
+        .fa-arrow-alt-circle-left {
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
     }
 
     ul.sidebar-body {

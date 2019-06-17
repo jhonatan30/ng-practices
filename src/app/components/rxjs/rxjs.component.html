@@ -1,8 +1,3 @@
-<div class="rxjs-menu-cotainer">
-
-  <div class="rxjs-item" (click)="onNavigateTo('rxjs/subject')">
-    <span> SUBJECT </span>
-  </div>
-  <span class="label-overlaped"> SUBJECT </span>
-
+<div class="rxjs-menu-container">
+  <app-section *ngFor="let item of menuItems" [path]="item.path" [label]="item.label" [isActive]="item.isActive"></app-section>
 </div>
