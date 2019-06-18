@@ -17,7 +17,7 @@ export const RX_JS_MENU_ITEMS: ITEM[] = [
         isActive: false
     },
     {
-        label: 'ERROR',
+        label: 'ERROR HANDLING',
         path: 'rxjs/error-handling',
         isActive: true
     },
