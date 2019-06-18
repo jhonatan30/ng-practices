@@ -37,8 +37,6 @@ export class ErrorHandlingComponent implements OnInit {
         err => {
           this.isCorrect = false;
           this.counter = err.toString();
-        },
-        () => {
           this.isRunning = false;
           this.btnLabel = 'START COUNTER';
         }
