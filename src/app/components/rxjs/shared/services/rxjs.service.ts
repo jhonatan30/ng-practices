@@ -10,7 +10,7 @@ export class RxjsService {
   constructor() { }
 
   public returnError(): Observable<any> {
-    return interval(200).pipe(mergeMap(number => number > 1000 ? throwError(number) : of(number)));
+    return interval(200).pipe(mergeMap(number => number > 10 ? throwError(number) : of(number)));
   }
 
 }
