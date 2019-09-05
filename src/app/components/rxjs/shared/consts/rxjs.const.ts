@@ -7,6 +7,16 @@ export const RX_JS_MENU_ITEMS: ITEM[] = [
         isActive: true
     },
     {
+        label: 'ERROR HANDLING',
+        path: 'rxjs/error-handling',
+        isActive: true
+    },
+    {
+        label: 'FORKJOIN',
+        path: 'rxjs/forkjoin',
+        isActive: true
+    },
+    {
         label: 'COMBINATION',
         path: 'rxjs/combination',
         isActive: false
@@ -15,11 +25,6 @@ export const RX_JS_MENU_ITEMS: ITEM[] = [
         label: 'CONDITIONAL',
         path: 'rxjs/conditional',
         isActive: false
-    },
-    {
-        label: 'ERROR HANDLING',
-        path: 'rxjs/error-handling',
-        isActive: true
     },
     {
         label: 'MULTICASTING',

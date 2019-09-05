@@ -1,4 +1,5 @@
 import { ErrorHandlingComponent } from './error-handling/error-handling.component';
+import { ForkjoinComponent } from './forkjoin/forkjoin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsComponent } from './rxjs.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'error-handling',
         component: ErrorHandlingComponent
+    },
+    {
+        path: 'forkjoin',
+        component: ForkjoinComponent
     }
 ];
 
