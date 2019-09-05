@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IcndbApiService } from 'src/app/shared/services/icndb-api.service';
 import { ICNDBResponse } from 'src/app/shared/models/icndb-api.model';
 import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-forkjoin',
@@ -22,15 +23,15 @@ export class ForkjoinComponent implements OnInit {
   public getJokes() {
     forkJoin([this._getRandomJoke(), this._getRandomJoke(), this._getRandomJoke(), this._getRandomJoke()])
       .subscribe(([j1, j2, j3, j4]) => {
-        this.joke1 = j1.value.joke;
-        this.joke2 = j2.value.joke;
-        this.joke3 = j3.value.joke;
-        this.joke4 = j4.value.joke;
+        this.joke1 = j1;
+        this.joke2 = j2;
+        this.joke3 = j3;
+        this.joke4 = j4;
       });
   }
 
-  private _getRandomJoke(): Observable<ICNDBResponse> {
-    return this._jokesService.getRandomJoke();
+  private _getRandomJoke(): Observable<string> {
+    return this._jokesService.getRandomJoke().pipe(map(response => response.value.joke));
   }
 
 }
