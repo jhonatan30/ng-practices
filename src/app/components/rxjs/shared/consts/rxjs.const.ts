@@ -12,14 +12,9 @@ export const RX_JS_MENU_ITEMS: ITEM[] = [
         isActive: true
     },
     {
-        label: 'FORKJOIN',
-        path: 'rxjs/forkjoin',
-        isActive: true
-    },
-    {
         label: 'COMBINATION',
         path: 'rxjs/combination',
-        isActive: false
+        isActive: true
     },
     {
         label: 'CONDITIONAL',

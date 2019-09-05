@@ -5,11 +5,11 @@ import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-forkjoin',
-  templateUrl: './forkjoin.component.html',
-  styleUrls: ['./forkjoin.component.scss']
+  selector: 'app-combination',
+  templateUrl: './combination.component.html',
+  styleUrls: ['./combination.component.scss']
 })
-export class ForkjoinComponent implements OnInit {
+export class CombinationComponent implements OnInit {
 
   public joke1: string = '';
   public joke2: string = '';

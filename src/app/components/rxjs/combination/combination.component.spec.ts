@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ForkjoinComponent } from './forkjoin.component';
+import { CombinationComponent } from './combination.component';
 
 describe('ForkjoinComponent', () => {
-  let component: ForkjoinComponent;
-  let fixture: ComponentFixture<ForkjoinComponent>;
+  let component: CombinationComponent;
+  let fixture: ComponentFixture<CombinationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ForkjoinComponent ]
+      declarations: [CombinationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ForkjoinComponent);
+    fixture = TestBed.createComponent(CombinationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
