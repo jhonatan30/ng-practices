@@ -9,6 +9,12 @@ import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ServicesModule } from './shared/services/services.module';
+import { HighlightModule } from 'ngx-highlightjs';
+import typescript from 'highlight.js/lib/languages/typescript';
+
+export function hljsLanguages() {
+  return [{ name: 'typescript', func: typescript }];
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +24,7 @@ import { ServicesModule } from './shared/services/services.module';
     CommonModule,
     ComponentsModule,
     CoreModule,
+    HighlightModule.forRoot({ languages: hljsLanguages }),
     HttpClientModule,
     NoopAnimationsModule,
     RouterModule.forRoot([]),

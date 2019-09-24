@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FunctionalProgrammingComponent implements OnInit {
 
+  public tsCode: string = `
+  let toUpperCase = x => x.toUpperCase();
+
+  let exclaim = x => '/$/{x}!'
+
+  let compose = (f1, f2) => x => f1(f2(x))
+
+  let effusive = compose(exclaim, toUpperCase)
+
+  effusive('test') // "TEST!"
+  `;
+
   constructor() { }
 
   ngOnInit() {
