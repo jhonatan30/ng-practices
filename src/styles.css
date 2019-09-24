@@ -20,3 +20,11 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     box-shadow: 4px 3px 8px 0px #d0d0d0e0;
 }
+
+.rxjs-menu-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 25px;
+}

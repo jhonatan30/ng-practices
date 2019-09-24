@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IcndbApiService } from 'src/app/shared/services/icndb-api.service';
 import { Subscription } from 'rxjs';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-subject',

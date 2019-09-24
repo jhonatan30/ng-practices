@@ -1,7 +1,7 @@
+import { catchError } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { RxjsService } from '../shared/services/rxjs.service';
-import { catchError, map } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { RxjsService } from '../../shared/services/rxjs.service';
 
 @Component({
   selector: 'app-error-handling',

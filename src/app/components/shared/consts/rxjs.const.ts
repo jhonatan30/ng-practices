@@ -1,6 +1,6 @@
-import { ITEM } from '../models/rxjs.model';
+import { MenuItem } from 'src/app/shared/models/menu-item.model';
 
-export const RX_JS_MENU_ITEMS: ITEM[] = [
+export const RX_JS_MENU_ITEMS: MenuItem[] = [
     {
         label: 'SUBJECT',
         path: 'rxjs/subject',

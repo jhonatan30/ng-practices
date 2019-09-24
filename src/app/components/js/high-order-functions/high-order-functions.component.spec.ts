@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JsComponent } from './js.component';
+import { HighOrderFunctionsComponent } from './high-order-functions.component';
 
-describe('JsComponent', () => {
-  let component: JsComponent;
-  let fixture: ComponentFixture<JsComponent>;
+describe('HighOrderFunctionsComponent', () => {
+  let component: HighOrderFunctionsComponent;
+  let fixture: ComponentFixture<HighOrderFunctionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JsComponent ]
+      declarations: [ HighOrderFunctionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JsComponent);
+    fixture = TestBed.createComponent(HighOrderFunctionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

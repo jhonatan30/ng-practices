@@ -1,23 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ITEM } from './shared/models/rxjs.model';
-import { RX_JS_MENU_ITEMS } from './shared/consts/rxjs.const';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { MenuItem } from '../../shared/models/menu-item.model';
+import { RX_JS_MENU_ITEMS } from '../shared/consts/rxjs.const';
 
 @Component({
   selector: 'app-rxjs',
-  templateUrl: './rxjs.component.html',
-  styleUrls: ['./rxjs.component.scss']
+  template: `<div class="rxjs-menu-container">
+    <app-section *ngFor="let item of menuItems" [path]="item.path" [label]="item.label" [isActive]="item.isActive"></app-section>
+  </div>`
 })
-export class RxjsComponent implements OnInit, OnDestroy {
+export class RxjsComponent {
 
-  public menuItems: ITEM[] = RX_JS_MENU_ITEMS;
-
-  private _subs: Subscription[] = [];
+  public menuItems: MenuItem[] = RX_JS_MENU_ITEMS;
 
   constructor() { }
-
-  ngOnInit() { }
-
-  ngOnDestroy(): void { this._subs.forEach(s => s.unsubscribe()); }
 
 }
