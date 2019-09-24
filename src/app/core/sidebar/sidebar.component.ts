@@ -25,6 +25,11 @@ export class SidebarComponent implements OnInit {
       label: 'Javascript',
       icon: 'fab fa-js-square'
     },
+    {
+      url: 'paradigms',
+      label: 'Paradigms',
+      icon: 'fas fa-bezier-curve'
+    },
   ];
 
 
