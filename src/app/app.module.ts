@@ -11,9 +11,13 @@ import { RouterModule } from '@angular/router';
 import { ServicesModule } from './shared/services/services.module';
 import { HighlightModule } from 'ngx-highlightjs';
 import typescript from 'highlight.js/lib/languages/typescript';
+import shell from 'highlight.js/lib/languages/shell';
 
 export function hljsLanguages() {
-  return [{ name: 'typescript', func: typescript }];
+  return [
+    { name: 'typescript', func: typescript },
+    { name: 'shell', func: shell }
+  ];
 }
 
 @NgModule({

@@ -30,6 +30,11 @@ export class SidebarComponent implements OnInit {
       label: 'Paradigms',
       icon: 'fas fa-bezier-curve'
     },
+    {
+      url: 'git',
+      label: 'Git',
+      icon: 'fas fa-code-branch'
+    },
   ];
 
 

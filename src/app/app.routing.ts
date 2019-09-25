@@ -1,10 +1,11 @@
+import { GitComponent } from './components/git/git.component';
+import { HomeComponent } from './components/home/home.component';
 import { JsModule } from './components/js/js.module';
 import { NgModule } from '@angular/core';
 import { ParadigmsModule } from './components/paradigms/paradigms.module';
 import { PromisesComponent } from './components/promises/promises.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RxjsModule } from './components/rxjs/rxjs.module';
-import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'paradigms',
         loadChildren: () => ParadigmsModule
+    },
+    {
+        path: 'git',
+        component: GitComponent
     }
 ];
 
