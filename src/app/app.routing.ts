@@ -1,11 +1,8 @@
 import { GitComponent } from './components/git/git.component';
 import { HomeComponent } from './components/home/home.component';
-import { JsModule } from './components/js/js.module';
 import { NgModule } from '@angular/core';
-import { ParadigmsModule } from './components/paradigms/paradigms.module';
 import { PromisesComponent } from './components/promises/promises.component';
 import { RouterModule, Routes } from '@angular/router';
-import { RxjsModule } from './components/rxjs/rxjs.module';
 
 const routes: Routes = [
     {
@@ -14,7 +11,8 @@ const routes: Routes = [
     },
     {
         path: 'rxjs',
-        loadChildren: () => RxjsModule
+        // Dynamic import
+        loadChildren: () => import('./components/rxjs/rxjs.module').then(m => m.RxjsModule)
     },
     {
         path: 'promises',
@@ -22,11 +20,14 @@ const routes: Routes = [
     },
     {
         path: 'javascript',
-        loadChildren: () => JsModule
+        // Dynamic import
+        loadChildren: () => import('./components/js/js.module').then(m => m.JsModule)
     },
     {
         path: 'paradigms',
-        loadChildren: () => ParadigmsModule
+        // Dynamic import
+        loadChildren: () => import('./components/paradigms/paradigms.module').then(m => m.ParadigmsModule)
+
     },
     {
         path: 'git',
