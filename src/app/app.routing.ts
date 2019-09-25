@@ -1,7 +1,5 @@
-import { GitComponent } from './components/git/git.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
-import { PromisesComponent } from './components/promises/promises.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -16,7 +14,8 @@ const routes: Routes = [
     },
     {
         path: 'promises',
-        component: PromisesComponent
+        // Dynamic import
+        loadChildren: () => import('./components/promises/promises.module').then(m => m.PromisesModule)
     },
     {
         path: 'javascript',
@@ -31,7 +30,8 @@ const routes: Routes = [
     },
     {
         path: 'git',
-        component: GitComponent
+        // Dynamic import
+        loadChildren: () => import('./components/git/git.module').then(m => m.GitModule)
     }
 ];
 

@@ -12,6 +12,4 @@ export class RxjsComponent {
 
   public menuItems: MenuItem[] = RX_JS_MENU_ITEMS;
 
-  constructor() { }
-
 }

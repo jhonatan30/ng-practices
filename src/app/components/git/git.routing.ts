@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PromisesComponent } from './promises.component';
 import { RouterModule, Routes } from '@angular/router';
-
 import { SidebarComponent } from 'src/app/core/sidebar/sidebar.component';
+import { GitComponent } from './git.component';
 
 const routes: Routes = [
     {
@@ -10,7 +9,7 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                component: PromisesComponent,
+                component: GitComponent,
             },
             {
                 path: '',
@@ -25,4 +24,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class PromisesRoutingModule { }
+export class GitRoutingModule { }
