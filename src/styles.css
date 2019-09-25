@@ -13,12 +13,16 @@ p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+.page-contaier {
+    height: 100%;
+    padding: 20px;
+}
 
 .cardboard {
     background: white;
-    width: 50%;
     padding: 10px;
     box-shadow: 4px 3px 8px 0px #d0d0d0e0;
+    margin-bottom: 10px;
 }
 
 .rxjs-menu-container {
