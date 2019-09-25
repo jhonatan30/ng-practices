@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyInfoComponent implements OnInit {
 
+  completeName: 'Jhonatan S.';
+
+  name: string = 'JS';
+
   constructor() { }
 
   ngOnInit() {
+    setInterval(() => {
+
+    }, 1000);
   }
 
 }

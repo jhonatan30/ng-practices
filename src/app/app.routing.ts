@@ -1,11 +1,12 @@
-import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        pathMatch: 'full',
+        // Dynamic import
+        loadChildren: () => import('./components/my-info/my-info.module').then(m => m.MyInfoModule)
     },
     {
         path: 'rxjs',
