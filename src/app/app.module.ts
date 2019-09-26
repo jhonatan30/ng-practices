@@ -11,7 +11,6 @@ import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ServicesModule } from './shared/services/services.module';
-import { SharedModule } from './shared/shared.module';
 
 export function hljsLanguages() {
   return [

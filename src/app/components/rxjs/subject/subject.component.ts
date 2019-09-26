@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IcndbApiService } from 'src/app/shared/services/icndb-api.service';
+import { NorrisJokeService } from 'src/app/shared/services/icndb-api.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +13,7 @@ export class SubjectComponent implements OnInit, OnDestroy {
 
   private _subs: Subscription[] = [];
 
-  constructor(private _icndbApiService: IcndbApiService) { }
+  constructor(private _icndbApiService: NorrisJokeService) { }
 
   ngOnInit() { }
 

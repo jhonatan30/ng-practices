@@ -33,6 +33,11 @@ const routes: Routes = [
         path: 'git',
         // Dynamic import
         loadChildren: () => import('./components/git/git.module').then(m => m.GitModule)
+    },
+    {
+        path: 'angular',
+        // Dynamic import
+        loadChildren: () => import('./components/angular/angular.module').then(m => m.AngularModule)
     }
 ];
 

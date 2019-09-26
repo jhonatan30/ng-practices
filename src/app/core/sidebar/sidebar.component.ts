@@ -35,6 +35,11 @@ export class SidebarComponent implements OnInit {
       label: 'Git',
       icon: 'fas fa-code-branch'
     },
+    {
+      url: 'angular',
+      label: 'Angular',
+      icon: 'fab fa-angular'
+    }
   ];
 
 

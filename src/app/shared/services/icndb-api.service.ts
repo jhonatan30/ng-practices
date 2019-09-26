@@ -5,7 +5,7 @@ import { Observable, Subject } from 'rxjs';
 import { RequestService } from './request.service';
 
 @Injectable()
-export class IcndbApiService {
+export class NorrisJokeService {
 
   private _endpoints: Endpoint = {
     getUsersPerPage: 'http://api.icndb.com/jokes/random'

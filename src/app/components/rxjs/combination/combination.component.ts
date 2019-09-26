@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IcndbApiService } from 'src/app/shared/services/icndb-api.service';
+import { NorrisJokeService } from 'src/app/shared/services/icndb-api.service';
 import { ICNDBResponse } from 'src/app/shared/models/icndb-api.model';
 import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,7 +16,7 @@ export class CombinationComponent implements OnInit {
   public joke3: string = '';
   public joke4: string = '';
 
-  constructor(private _jokesService: IcndbApiService) { }
+  constructor(private _jokesService: NorrisJokeService) { }
 
   ngOnInit() { }
 
