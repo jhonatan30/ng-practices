@@ -1,10 +1,10 @@
-export interface ICNDBResponseValue {
+export class ICNDBResponseValue {
     id: number;
     joke: string;
     categories: any[];
 }
 
-export interface ICNDBResponse {
+export class ICNDBResponse {
     type: string;
     value: ICNDBResponseValue;
 }

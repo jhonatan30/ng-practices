@@ -1,21 +1,14 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ICNDBResponseValue } from '../../models/icndb-api.model';
 
 @Component({
   selector: 'app-joke',
   templateUrl: './joke.component.html',
-  styleUrls: ['./joke.component.scss']
+  styleUrls: ['./joke.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class JokeComponent implements OnInit, OnChanges {
+export class JokeComponent {
 
-  @Input('jokes') jokes: string[] = [];
-
-  constructor() { }
-
-  ngOnInit() { }
-
-  ngOnChanges(_: SimpleChanges): void {
-    const list: Element = document.querySelector('.jokes-list');
-    setTimeout(__ => list.scrollTo({ top: list.scrollHeight, behavior: 'smooth' }), 0);
-  }
+  @Input() joke: ICNDBResponseValue;
 
 }

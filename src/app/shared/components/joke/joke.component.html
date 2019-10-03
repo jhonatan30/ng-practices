@@ -1,5 +1,4 @@
 <div class="joke-container">
-    <ul class="jokes-list">
-        <li *ngFor="let joke of jokes"> {{ joke }} </li>
-    </ul>
+    <span> Joke: {{ joke.joke }} </span>
+    {{ runChangeDetection }}
 </div>

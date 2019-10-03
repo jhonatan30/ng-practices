@@ -1,5 +1,7 @@
-import shell from 'highlight.js/lib/languages/shell';
+import javascript from 'highlight.js/lib/languages/javascript';
+import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +17,9 @@ import { ServicesModule } from './shared/services/services.module';
 export function hljsLanguages() {
   return [
     { name: 'typescript', func: typescript },
-    { name: 'shell', func: shell }
+    { name: 'javascript', func: javascript },
+    { name: 'scss', func: scss },
+    { name: 'xml', func: xml }
   ];
 }
 

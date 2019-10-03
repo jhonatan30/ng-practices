@@ -1,4 +1,9 @@
 .joke-container {
+    min-height: 100px;;
+    span {
+        color: white;
+        font-size: 30px;
+    }
     ul {
         list-style: none;
         color: white;

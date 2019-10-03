@@ -1,4 +1,96 @@
 <div class="page-container">
-    <button type="button" class="btn btn-info" (click)="onGetNewJoke()"> GET NEW JOKE </button>
-    <app-joke [jokes]="jokes"></app-joke>
+    <div class="section-to-read">
+
+        <h1> Change Detection </h1>
+
+        <p>
+            By default whenever any data is mutated/changed or user exist events, timers, XHR, promises, Angular will
+            run the change detector to update the DOM.
+        </p>
+
+        <p>
+            With the onPush strategy, Angular will only run the change detector when a new reference is passed to
+            @Input() data.
+        </p>
+
+        <p>
+            By default, Angular does not do deep object comparison to detect changes, it only takes into account
+            properties used by the template
+        </p>
+
+        <p>
+            The following example shows how the change detections always is called even when the input in the
+            HelloComponet doesn´t change
+        </p>
+
+        <pre><code [highlight]="tsParentCode"></code></pre>
+        <pre><code [highlight]="tsChildCode"></code></pre>
+        <pre><code [highlight]="shellOutCode"></code></pre>
+
+        <hr>
+
+        <h2> OnPush Change Detection Strategy </h2>
+
+        <p>
+            By setting the onPush change detection strategy we are signing a contract with Angular that obliges us to
+            work with immutable objects.
+        </p>
+
+        <p>
+            The advantage of working with immutability in the context of change detection is that Angular could perform
+            a simple reference check in order to know if the view should be checked. Such checks are way cheaper than a
+            deep comparison check.
+        </p>
+
+        <pre><code [highlight]="tooltipCode"></code></pre>
+        <pre><code [highlight]="tooltipParentCode"></code></pre>
+
+        <hr>
+
+        <h2> An event originated from the component or one of its children </h2>
+
+        <p>
+            When we click on the button, Angular runs a change detection cycle and the view is updated as expected. The
+            rule applies only to DOM events, so the following APIs will not work.
+        </p>
+
+        <p>
+            We still updating the property so in the next change detection cycle, for example, when we click on the
+            button, the value will be six ( 5 + 1 ).
+        </p>
+
+        <button type="button" class="btn btn-info" (click)="add()"> ADD ONE </button>
+        <span class="count-number">
+            {{ count }}
+        </span>
+
+        <hr>
+
+        <h2>Run change detection explicitly</h2>
+
+        <p>
+            Angular provides us with three methods for triggering change detection ourselves when needed. The first is
+            detectChanges() which tells Angular to run change detection on the component and his children.
+        </p>
+
+        <pre><code [highlight]="detectChangeCode"></code></pre>
+
+        <button type="button" class="btn btn-info" (click)="onGetNewJoke()"> GET ASYNC JOKE </button>
+        <app-joke [joke]="joke"></app-joke>
+
+        <p>
+            The second is ApplicationRef.tick() which tells Angular to run change detection for the whole application.
+        </p>
+
+        <pre><code [highlight]="tickCode"></code></pre>
+
+        <p>
+            The third is markForCheck() which does NOT trigger change detection. Instead, it marks all onPush ancestors
+            as to be checked once, either as part of the current or next change detection cycle.
+        </p>
+        <pre><code [highlight]="markForCheckCode"></code></pre>
+
+
+        <app-references [references]="references"></app-references>
+    </div>
 </div>
