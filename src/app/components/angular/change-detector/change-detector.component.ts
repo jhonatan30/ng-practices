@@ -1,11 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ICNDBResponseValue } from 'src/app/shared/models/icndb-api.model';
 import { NorrisJokeService } from 'src/app/shared/services/icndb-api.service';
+import { BehaviorSubject } from 'rxjs';
+import { SimpleListItem } from 'src/app/shared/models/menu-item.model';
 
 @Component({
   selector: 'app-change-detector',
@@ -15,11 +12,10 @@ import { NorrisJokeService } from 'src/app/shared/services/icndb-api.service';
 })
 export class ChangeDetectorComponent implements OnInit {
 
-  public count: number = 5;
-  public joke: ICNDBResponseValue = { id: 0, joke: '', categories: [''] };
   public references: string[] = [
     'https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4',
-    'https://dzone.com/articles/how-to-use-change-detection-in-angular'
+    'https://dzone.com/articles/how-to-use-change-detection-in-angular',
+    'https://www.youtube.com/watch?v=deU1miKhMCA'
   ];
 
   // Code for example with deafult change Detection estrategy
@@ -139,6 +135,11 @@ export class ChangeDetectorComponent implements OnInit {
     }
   }`;
 
+  public count: number = 5;
+  public joke: ICNDBResponseValue = { id: 0, joke: '', categories: [''] };
+
+  public items: SimpleListItem[] = [];
+  public items$ = new BehaviorSubject<SimpleListItem[]>(this.items);
 
   constructor(private _norrisJokeService: NorrisJokeService, private cdr: ChangeDetectorRef) {
     setInterval(() => this.count = 5, 1000);
@@ -155,6 +156,11 @@ export class ChangeDetectorComponent implements OnInit {
 
   public add(): void {
     this.count++;
+  }
+
+  public onAddRandomNumber(): void {
+    this.items.push({ title: Math.random().toString() });
+    this.items$.next(this.items);
   }
 
 }

@@ -39,6 +39,11 @@ export class SidebarComponent implements OnInit {
       url: 'angular',
       label: 'Angular',
       icon: 'fab fa-angular'
+    },
+    {
+      url: 'technologies',
+      label: 'Technologies',
+      icon: 'fas fa-laptop-code'
     }
   ];
 
@@ -46,6 +51,7 @@ export class SidebarComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit() {
+    this.isItemActive(this._router.url);
   }
 
 

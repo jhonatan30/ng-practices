@@ -1,12 +1,13 @@
+import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        // Dynamic import
-        loadChildren: () => import('./components/my-info/my-info.module').then(m => m.MyInfoModule)
+        component: HomeComponent
     },
     {
         path: 'rxjs',
@@ -38,7 +39,11 @@ const routes: Routes = [
         path: 'angular',
         // Dynamic import
         loadChildren: () => import('./components/angular/angular.module').then(m => m.AngularModule)
-    }
+    },
+    {
+        path: 'technologies',
+        component: TechnologiesComponent
+    },
 ];
 
 @NgModule({

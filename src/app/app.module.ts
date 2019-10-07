@@ -13,6 +13,8 @@ import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ServicesModule } from './shared/services/services.module';
+import { SharedModule } from './shared/shared.module';
+import { SidebarComponent } from './core/sidebar/sidebar.component';
 
 export function hljsLanguages() {
   return [
@@ -34,7 +36,8 @@ export function hljsLanguages() {
     HttpClientModule,
     NoopAnimationsModule,
     RouterModule.forRoot([]),
-    ServicesModule
+    ServicesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,4 @@
 <div class="sidebar-container">
-  <!-- HEADER -->
-  <!-- <div class="sidebar-header">
-      <i class="fas fa-arrow-alt-circle-left"></i>
-  </div> -->
-  
-  <!-- BODY -->
   <ul class="sidebar-body">
     <div *ngFor="let item of menuItems" (click)="onSelectMenuItem(item.url)" class="menu-item" [class.active]="isItemActive(item.url)">
       <i [ngClass]="item.icon"></i>

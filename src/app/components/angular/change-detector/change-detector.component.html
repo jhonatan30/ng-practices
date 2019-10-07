@@ -90,6 +90,22 @@
         </p>
         <pre><code [highlight]="markForCheckCode"></code></pre>
 
+        <h2> Angular Async Pipe </h2>
+
+        <p>
+            We can see that the view is updated when we click on the button. The reason for that is that when a new
+            value is emitted, the async pipe marks the component to be checked for changes.
+        </p>
+        <p>
+            Angular is calling to markForCheck() for us and that’s why the view is updated even though the reference
+            hasn’t changed.
+        </p>
+
+        <button type="button" class="btn btn-info" (click)="onAddRandomNumber()"> ADD RANDOM NUMBER </button>
+        <app-simple-list [items$]="items$"></app-simple-list>
+
+        <hr>
+
 
         <app-references [references]="references"></app-references>
     </div>

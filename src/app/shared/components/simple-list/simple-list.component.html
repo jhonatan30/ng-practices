@@ -1,0 +1,4 @@
+<div *ngFor="let item of items$ | async">
+    <span> {{item.title}} </span>
+    <span *ngIf="item.description"> {{ item.description }} </span>
+</div>
