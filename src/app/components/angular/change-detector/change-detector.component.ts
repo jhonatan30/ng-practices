@@ -15,7 +15,8 @@ export class ChangeDetectorComponent implements OnInit {
   public references: string[] = [
     'https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4',
     'https://dzone.com/articles/how-to-use-change-detection-in-angular',
-    'https://www.youtube.com/watch?v=deU1miKhMCA'
+    'https://www.youtube.com/watch?v=deU1miKhMCA',
+    'https://www.youtube.com/watch?v=Ol6dFGs0Wxo'
   ];
 
   // Code for example with deafult change Detection estrategy

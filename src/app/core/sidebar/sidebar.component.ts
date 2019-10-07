@@ -11,6 +11,11 @@ export class SidebarComponent implements OnInit {
 
   public menuItems: SidebarItem[] = [
     {
+      url: 'angular',
+      label: 'Angular',
+      icon: 'fab fa-angular'
+    },
+    {
       url: 'rxjs',
       label: 'RxJs',
       icon: 'fas fa-prescription'
@@ -34,11 +39,6 @@ export class SidebarComponent implements OnInit {
       url: 'git',
       label: 'Git',
       icon: 'fas fa-code-branch'
-    },
-    {
-      url: 'angular',
-      label: 'Angular',
-      icon: 'fab fa-angular'
     },
     {
       url: 'technologies',

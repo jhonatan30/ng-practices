@@ -3,7 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { SimpleListItem } from 'src/app/shared/models/menu-item.model';
 
 export const TECHNOLOGIES: SimpleListItem[] = [
-  { img: '', title: 'Hibernate', description: '' }
+  { img: '', title: 'Hibernate', description: '' },
+  { img: '', title: 'Jenkins', description: '' }
 ];
 
 @Component({

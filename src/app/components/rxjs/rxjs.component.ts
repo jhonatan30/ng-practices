@@ -4,7 +4,7 @@ import { RX_JS_MENU_ITEMS } from '../shared/consts/rxjs.const';
 
 @Component({
   selector: 'app-rxjs',
-  template: `<div class="rxjs-menu-container">
+  template: `<div class="menu-container">
     <app-section *ngFor="let item of menuItems" [path]="item.path" [label]="item.label" [isActive]="item.isActive"></app-section>
   </div>`
 })
