@@ -11,42 +11,16 @@ export class SidebarComponent implements OnInit {
 
   public menuItems: SidebarItem[] = [
     {
-      url: 'angular',
-      label: 'Angular',
-      icon: 'fab fa-angular'
+      url: 'sports',
+      label: 'Sports',
+      icon: 'fas fa-futbol'
     },
     {
-      url: 'rxjs',
-      label: 'RxJs',
-      icon: 'fas fa-prescription'
+      url: 'pixel-avatar',
+      label: 'Pixel Avatar',
+      icon: 'fas fa-chess-board'
     },
-    {
-      url: 'promises',
-      label: 'Promises',
-      icon: 'fas fa-stream'
-    },
-    {
-      url: 'javascript',
-      label: 'Javascript',
-      icon: 'fab fa-js-square'
-    },
-    {
-      url: 'paradigms',
-      label: 'Paradigms',
-      icon: 'fas fa-bezier-curve'
-    },
-    {
-      url: 'git',
-      label: 'Git',
-      icon: 'fas fa-code-branch'
-    },
-    {
-      url: 'technologies',
-      label: 'Technologies',
-      icon: 'fas fa-laptop-code'
-    }
   ];
-
 
   constructor(private _router: Router) { }
 

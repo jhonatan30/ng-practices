@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -9,7 +9,7 @@ export class RequestService {
   constructor(private _http: HttpClient) { }
 
   public get(url: string): Observable<any> {
-    return this._http.get<any>(url)
+    return this._http.get(url, { responseType: 'blob' })
       .pipe(catchError(error => this._handleError(error)));
   }
 

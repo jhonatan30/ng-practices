@@ -1,0 +1,33 @@
+<div class="pa-container">
+
+  <h1 class="pa-container__title"> Choose one option: </h1>
+  <span> {{ lastSpriteSelected }} </span>
+
+  <br>
+
+  <button type="button" class="btn btn-info" (click)="onBtnClick('male')"> male </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('female')"> female </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('human')"> human </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('identicon')"> identicon </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('initials')"> initials </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('bottts')"> bottts </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('avataaars')"> avataaars </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('jdenticon')"> jdenticon </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('gridy')"> gridy </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('code')"> code </button>
+
+  <h1 class="pa-container__title"> Choose one option: </h1>
+  <span> {{ lastModSelected }} </span>
+
+  <br>
+
+
+  <button type="button" class="btn btn-info" (click)="onBtnClick('happy', true)"> happy </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('sad', true)"> sad </button>
+  <button type="button" class="btn btn-info" (click)="onBtnClick('surprised', true)"> surprised </button>
+
+  <h1 class="pa-container__title"> Avatar: </h1>
+
+  <img *ngIf="imageToShow" class="pa-container__image" [src]="imageToShow">
+
+</div>

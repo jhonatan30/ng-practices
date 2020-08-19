@@ -3,11 +3,12 @@
     height: 100%;
 
     .sidebar-comp-container {
-        width: auto;
+        width: 20%;
     }
-    
+
     .router-outlet-container {
         width: 100%;
-        background-color: #F3F3F3;
+        background-color: #c0c0c0;
+        padding: 16px;
     }
 }
