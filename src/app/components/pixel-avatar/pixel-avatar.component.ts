@@ -1,6 +1,8 @@
-import { RequestService } from './../../shared/services/request.service';
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+import { PixelAvatarService } from './pixel-avatar.service';
+import { SPRITE, MOD } from './pixel-avatar.conts';
 
 @Component({
   selector: 'app-pixel-avatar',
@@ -9,40 +11,61 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class PixelAvatarComponent implements OnInit {
 
-  public lastSpriteSelected: string = 'male';
-  public lastModSelected: string = 'happy';
-
-  name: string;
-  html: any;
-
+  public activeSprite: string = 'male';
+  public activeMod: string = 'happy';
+  public isModDisabled: boolean = false;
   public imageToShow: any;
 
-  constructor(private _requestService: RequestService, private _sanitizer: DomSanitizer) { }
+  constructor(private pixelAvatarService: PixelAvatarService, private _sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.requestAvatar();
+  }
 
-  public onBtnClick(element: string, isMod: boolean = false): void {
+  /**
+   * Called when sprite button is clicked
+   *
+   * @param option sprite data
+   */
+  public onSpriteClick(option: SPRITE): void {
+    this.activeSprite = option;
+    const humanSprites: string[] = ['male', 'female', 'human', 'avataaars'];
 
-    if (isMod) {
-      this.lastModSelected = element;
+    if (humanSprites.includes(option)) {
+      this.isModDisabled = false;
     } else {
-      this.lastSpriteSelected = element;
+      this.isModDisabled = true;
+      this.activeMod = '';
     }
+    this.requestAvatar();
+  }
 
-    const randomSeed = Math.floor(Math.random() * 10000);
-    const url = `https://avatars.dicebear.com/api/${this.lastSpriteSelected}/${randomSeed}.svg?mood[]=${this.lastModSelected}`;
+  /**
+   * Called when mod button is clicked
+   *
+   * @param option mod data
+   */
+  public onModClick(option: MOD): void {
+    this.activeMod = option;
+    this.requestAvatar();
+  }
 
-    this._requestService.get(url).subscribe((resp) => {
+  /**
+   * Get the avatar image info
+   */
+  private requestAvatar() {
+    this.pixelAvatarService
+      .requestAvatar(this.activeSprite, this.activeMod)
+      .subscribe((resp: Blob) => {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => {
+          const result: any = reader.result;
+          this.imageToShow = this._sanitizer.bypassSecurityTrustResourceUrl(result);
+        }, false);
 
-      const reader = new FileReader();
+        if (resp) { reader.readAsDataURL(resp); }
+      });
 
-      reader.addEventListener('load', () => {
-        const result: any = reader.result;
-        this.imageToShow = this._sanitizer.bypassSecurityTrustResourceUrl(result);
-      }, false);
-
-      if (resp) { reader.readAsDataURL(resp); }
-    });
   }
 
 }

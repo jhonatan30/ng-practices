@@ -1,33 +1,33 @@
 <div class="pa-container">
 
-  <h1 class="pa-container__title"> Choose one option: </h1>
-  <span> {{ lastSpriteSelected }} </span>
+  <h1 class="pa-container__title"> Choose a sprite </h1>
+  <div class="sprite-btns-container">
+    <button type="button" class="btn btn-info" [class.active]="'male' === activeSprite" (click)="onSpriteClick('male')"> male </button>
+    <button type="button" class="btn btn-info" [class.active]="'female' === activeSprite" (click)="onSpriteClick('female')"> female </button>
+    <button type="button" class="btn btn-info" [class.active]="'human' === activeSprite" (click)="onSpriteClick('human')"> human </button>
+    <button type="button" class="btn btn-info" [class.active]="'avataaars' === activeSprite" (click)="onSpriteClick('avataaars')"> avataaars </button>
+    <button type="button" class="btn btn-info" [class.active]="'identicon' === activeSprite" (click)="onSpriteClick('identicon')"> identicon </button>
+    <button type="button" class="btn btn-info" [class.active]="'initials' === activeSprite" (click)="onSpriteClick('initials')"> initials </button>
+    <button type="button" class="btn btn-info" [class.active]="'bottts' === activeSprite" (click)="onSpriteClick('bottts')"> bottts </button>
+    <button type="button" class="btn btn-info" [class.active]="'jdenticon' === activeSprite" (click)="onSpriteClick('jdenticon')"> jdenticon </button>
+    <button type="button" class="btn btn-info" [class.active]="'gridy' === activeSprite" (click)="onSpriteClick('gridy')"> gridy </button>
+    <button type="button" class="btn btn-info" [class.active]="'code' === activeSprite" (click)="onSpriteClick('code')"> code </button>
+  </div>
 
   <br>
-
-  <button type="button" class="btn btn-info" (click)="onBtnClick('male')"> male </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('female')"> female </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('human')"> human </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('identicon')"> identicon </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('initials')"> initials </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('bottts')"> bottts </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('avataaars')"> avataaars </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('jdenticon')"> jdenticon </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('gridy')"> gridy </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('code')"> code </button>
-
-  <h1 class="pa-container__title"> Choose one option: </h1>
-  <span> {{ lastModSelected }} </span>
-
   <br>
 
+  <h1 class="pa-container__title"> Choose a mod </h1>
+  <div class="mode-btns-container">
+    <button type="button" class="btn btn-info" [disabled]="isModDisabled" [class.active]="'happy' === activeMod" (click)="onModClick('happy', true)"> happy </button>
+    <button type="button" class="btn btn-info" [disabled]="isModDisabled" [class.active]="'sad' === activeMod" (click)="onModClick('sad', true)"> sad </button>
+    <button type="button" class="btn btn-info" [disabled]="isModDisabled" [class.active]="'surprised' === activeMod" (click)="onModClick('surprised', true)"> surprised </button>
+  </div>
 
-  <button type="button" class="btn btn-info" (click)="onBtnClick('happy', true)"> happy </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('sad', true)"> sad </button>
-  <button type="button" class="btn btn-info" (click)="onBtnClick('surprised', true)"> surprised </button>
+  <br>
+  <br>
 
-  <h1 class="pa-container__title"> Avatar: </h1>
-
+  <h1 class="pa-container__title"> Avatar </h1>
   <img *ngIf="imageToShow" class="pa-container__image" [src]="imageToShow">
 
 </div>

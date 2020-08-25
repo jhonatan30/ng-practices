@@ -1,7 +1,23 @@
+@import "src/assets/styles/_colors.scss";
+
 .pa-container {
-  background-color: #22a7f0;
+  background-color: #2f4866;
   height: 100%;
   width: 100%;
+  padding: 16px;
+
+  h1 {
+    text-align: center;
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+  }
 
   &__title {
     margin: 0 auto;
@@ -10,5 +26,38 @@
   &__image {
     height: 100px;
     width: 100px;
+  }
+
+  .sprite-btns-container {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    .btn.btn-info {
+      text-transform: uppercase;
+      margin: 5px;
+
+      &.active {
+        background-color: $pink-main;
+        border-color: $pink-main;
+      }
+    }
+  }
+
+  .mode-btns-container {
+    display: flex;
+    .btn.btn-info {
+      text-transform: uppercase;
+      margin: 5px;
+      flex-grow: 1;
+
+      &.active {
+        background-color: $pink-main;
+        border-color: $pink-main;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+      }
+    }
   }
 }
