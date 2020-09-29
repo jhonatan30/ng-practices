@@ -11,9 +11,10 @@ import { RouterModule } from '@angular/router';
 import { ServicesModule } from './shared/services/services.module';
 import { SelectionCardComponent } from './shared/components/selection-card/selection-card.component';
 import { PixelAvatarComponent } from './components/pixel-avatar/pixel-avatar.component';
+import { LoadingDirective } from './shared/directives/loading.directive';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SportsComponent, SelectionCardComponent, PixelAvatarComponent],
+  declarations: [AppComponent, SidebarComponent, SportsComponent, SelectionCardComponent, PixelAvatarComponent, LoadingDirective],
   imports: [
     AppRouting,
     BrowserModule,
